@@ -5,15 +5,12 @@ const email = document.querySelector('[name="email"]');
 const message = document.querySelector('[name="message"]');
 
 const onInput = event => {
-  if (!event.currentTarget) {
-    return;
-  }
 
-  const email = event.currentTarget.querySelector('[name="email"]').value.trim();
-  const message = event.currentTarget.querySelector('[name="message"]').value.trim();
+  const currentEmail = email.value.trim();
+  const currentMessage = message.value.trim();
   const data = {
-    email: email,
-    message: message
+    email: currentEmail,
+    message: currentMessage
   };
   localStorage.setItem("feedback-form-state", JSON.stringify(data));
 }
